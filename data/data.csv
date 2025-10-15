@@ -1,0 +1,122 @@
+Program Studi,Angkatan,Beban Tugas: Seberapa sering tumpukan tugas kuliah menjadi sumber stres bagi Anda?,Tingkat Kesulitan Materi: Seberapa sering materi yang sulit dipahami membuat Anda merasa tertekan?,Ekspektasi Akademik: Seberapa sering tekanan untuk mencapai IPK tinggi menjadi beban pikiran?,"Manajemen Waktu: Seberapa sering Anda merasa kesulitan menyeimbangkan waktu antara kuliah, organisasi, dan kehidupan pribadi?",Dampak pada Pola Tidur: Saya mengurangi jam tidur atau mengalami kesulitan tidur karena tuntutan akademik.,Dampak pada Motivasi: Saya kehilangan semangat dan motivasi belajar ketika merasa stres.,Dampak pada Konsentrasi: Saya merasa sulit untuk fokus saat mengikuti perkuliahan karena memikirkan beban lain.,"Strategi Proaktif & Terstruktur: Saya membuat jadwal, to-do list, dan mencicil pekerjaan untuk mengelola beban tugas.",Strategi Pencarian Dukungan Sosial: Saya aktif berdiskusi atau bercerita dengan teman/keluarga untuk mencari solusi atau sekadar melepas beban.,"Strategi Eskapisme (Pengalihan): Saya menghabiskan waktu untuk hiburan (nonton, main game, media sosial) untuk melupakan stres sejenak.",Strategi Penundaan (Prokrastinasi): Saya cenderung menunda pekerjaan hingga mendekati deadline ketika merasa overwhelmed.,"Strategi Keseimbangan Diri (Self-Care): Saya secara sadar meluangkan waktu untuk hobi, olahraga, atau istirahat yang cukup untuk menjaga kesejahteraan mental."
+Teknik Informatika,2023,4,3,4.0,3,4,4,4,2.0,2,5.0,5,4
+Teknik Informatika,2023,5,5,4.0,2,3,4,2,3.0,3,4.0,4,3
+Teknik Informatika,2023,3,4,3.0,3,4,3,2,4.0,4,5.0,3,5
+Kedokteran Gigi,2023,5,5,5.0,3,5,5,3,4.0,5,5.0,3,5
+Kedokteran Gigi,2023,5,5,5.0,3,2,2,2,2.0,2,3.0,3,3
+Kedokteran Gigi,2023,2,4,4.0,5,5,5,5,1.0,4,5.0,5,5
+Kedokteran Gigi,2023,2,3,1.0,1,3,3,3,4.0,5,5.0,3,5
+Kedokteran Gigi,2023,3,3,4.0,4,3,4,3,,3,4.0,4,4
+Kedokteran Gigi,2023,3,2,3.0,3,3,3,3,3.0,3,3.0,3,3
+Teknik Informatika,2023,3,3,4.0,3,4,4,3,3.0,4,5.0,4,4
+Teknik Informatika,2025,5,5,5.0,3,3,4,4,2.0,4,5.0,5,5
+Teknik Informatika,2023,4,4,5.0,3,3,4,3,4.0,4,4.0,2,3
+Teknik Informatika,2023,3,4,4.0,3,3,5,5,2.0,5,5.0,4,3
+Teknik Informatika ,2023,3,3,3.0,3,3,3,4,5.0,4,5.0,3,4
+Teknik Informatika,2023,3,3,4.0,3,2,4,4,3.0,4,4.0,3,3
+Teknik Informatika,2023,4,3,4.0,3,3,2,3,4.0,5,,4,4
+Teknik Informatika,2023,4,4,4.0,3,3,4,3,4.0,4,5.0,3,5
+Teknik Informatika,2025,3,3,3.0,3,3,4,4,3.0,3,4.0,4,4
+Teknik Informatika,2023,4,4,4.0,4,5,4,4,5.0,5,5.0,3,5
+Agroteknologi,2023,4,4,4.0,4,3,4,3,5.0,5,5.0,3,5
+Agribisnis,2023,4,3,4.0,5,4,4,3,2.0,4,4.0,3,5
+Manajemen,2023,2,3,2.0,3,2,4,3,4.0,5,4.0,2,5
+Manajemen,2023,3,3,3.0,3,3,3,3,3.0,3,3.0,3,3
+Manajemen,2023,4,3,4.0,3,3,5,5,5.0,4,4.0,5,4
+Manajemen,2023,4,3,3.0,4,4,1,2,4.0,1,4.0,1,2
+Manajemen,2023,4,3,4.0,3,4,4,4,5.0,5,3.0,1,4
+Teknik Informatika,2024,4,3,4.0,5,4,4,3,2.0,5,4.0,3,3
+Kedokteran,2023,5,4,5.0,4,4,4,3,5.0,3,5.0,5,2
+Teknik Elektro,2023,4,3,3.0,4,4,3,3,4.0,4,4.0,3,4
+Teknik Elektro,2023,4,3,3.0,3,4,3,3,5.0,5,5.0,3,5
+Teknik Elektro,2023,4,4,4.0,4,4,3,3,3.0,3,4.0,4,4
+Manajemen,2023,4,3,4.0,4,4,5,4,3.0,3,3.0,4,3
+Kimia,2023,2,2,2.0,2,3,3,2,5.0,5,5.0,2,5
+Akuntansi,2023,5,3,4.0,3,5,2,1,3.0,4,5.0,3,4
+Ekonomi Islam,2023,3,4,2.0,5,1,3,3,3.0,4,5.0,4,4
+Fisika,2023,5,1,3.0,3,4,5,3,3.0,2,5.0,3,3
+Biologi,2024,5,5,5.0,3,3,4,4,2.0,5,4.0,5,5
+Bisnis Digital,2023,3,3,3.0,3,4,4,4,5.0,4,3.0,3,3
+Kimia,2022,4,4,4.0,5,5,4,4,3.0,5,4.0,5,5
+Matematika,2024,5,4,5.0,3,5,5,5,4.0,4,5.0,5,5
+Teknik Elektro,2023,4,4,5.0,5,4,3,3,1.0,5,2.0,5,4
+Aktuaria,2021,4,4,2.0,1,5,4,3,3.0,4,5.0,2,5
+Statistika,2025,5,4,5.0,3,5,3,4,3.0,5,4.0,3,4
+Kedokteran,2023,5,5,5.0,5,5,3,3,5.0,5,5.0,5,5
+Teknik Informatika,2023,5,5,5.0,5,5,5,5,2.0,3,5.0,4,3
+Agribisnis,2023,4,5,4.0,4,4,5,3,2.0,5,5.0,3,3
+Teknik Informatika,2023,3,4,4.0,3,3,4,3,1.0,5,5.0,5,3
+Geofisika,2023,5,5,5.0,5,4,4,5,3.0,5,5.0,3,5
+Teknik Informatika,2021,3,3,3.0,5,2,3,3,1.0,3,3.0,2,5
+Administrasi Pemerintahan,2022,5,3,5.0,3,3,3,2,2.0,4,4.0,2,5
+Teknik Informatika,2024,5,5,5.0,4,3,4,5,1.0,3,4.0,5,3
+Administrasi Bisnis,2023,3,3,5.0,4,2,3,3,2.0,4,5.0,3,5
+Fisika,2023,5,5,5.0,4,4,4,3,3.0,4,4.0,4,5
+Matematika,2023,5,5,5.0,5,5,5,3,5.0,2,5.0,5,5
+Teknik Elektro,2023,4,3,4.0,5,5,5,2,1.0,3,5.0,4,5
+Kedokteran Gigi,2023,5,5,5.0,5,5,5,4,5.0,3,5.0,5,5
+Administrasi Pemerintahan,2023,3,3,3.0,3,3,3,3,2.0,4,5.0,3,5
+Business management,2024,5,5,2.0,4,4,5,5,5.0,4,4.0,2,5
+Kimia,2024,5,5,5.0,2,5,4,3,3.0,3,4.0,4,5
+Agroteknologi,2023,4,4,4.0,3,4,4,3,2.0,4,5.0,4,5
+Peternakan,2023,3,3,4.0,3,4,4,2,2.0,4,4.0,4,4
+Kimia,2023,4,5,4.0,5,5,5,5,1.0,4,5.0,5,4
+Teknik Geologi,2023,5,4,4.0,3,5,4,3,3.0,4,5.0,5,4
+Kedokteran,2023,4,4,4.0,3,5,4,2,4.0,5,5.0,3,5
+Teknik Informatika,2024,5,4,5.0,5,5,3,4,1.0,4,5.0,4,4
+Aktuaria,2025,4,4,5.0,3,4,3,2,4.0,5,3.0,5,3
+Kimia,2024,5,3,4.0,3,4,3,3,3.0,3,4.0,5,3
+Teknik Informatika,2023,4,5,5.0,4,3,4,5,2.0,1,4.0,3,5
+Statistika,2023,5,5,5.0,3,4,3,3,4.0,2,4.0,4,3
+Teknik Informatika,2025,5,4,5.0,5,4,5,4,1.0,3,4.0,5,4
+Teknik Informatika,2023,4,5,4.0,5,4,4,3,3.0,3,4.0,4,5
+Teknik Informatika,2025,4,5,5.0,5,4,4,5,1.0,4,5.0,5,3
+Teknik Informatika,2023,5,4,3.0,5,4,5,4,2.0,4,5.0,5,5
+Teknik Informatika,2023,5,4,5.0,3,4,5,4,2.0,4,5.0,5,4
+Teknik Informatika,2023,5,5,5.0,5,4,5,4,1.0,3,3.0,4,5
+Teknik Informatika,2023,4,5,4.0,4,5,5,4,3.0,4,4.0,5,1
+Teknik Informatika,2023,4,4,5.0,5,4,5,4,1.0,4,3.0,5,5
+Teknik Informatika,2023,4,5,5.0,3,5,4,4,1.0,1,4.0,5,5
+Teknik Informatika,2023,4,5,5.0,5,5,5,5,1.0,1,4.0,4,3
+Teknik Informatika,2023,4,2,2.0,1,2,3,4,1.0,1,5.0,5,5
+Teknik Informatika,2023,5,4,3.0,5,4,5,5,1.0,4,5.0,5,4
+Teknik Informatika,2023,4,5,1.0,4,1,5,4,1.0,4,5.0,5,5
+Teknik Informatika,2023,4,5,1.0,2,4,5,4,1.0,1,4.0,5,3
+Teknik Informatika,2023,4,5,4.0,5,5,5,5,1.0,1,5.0,5,4
+Teknik Informatika,2023,4,5,5.0,5,4,3,4,1.0,1,5.0,5,3
+Teknik Informatika,2023,4,5,5.0,4,3,5,5,1.0,2,4.0,5,4
+Teknik Informatika,2023,4,5,3.0,5,5,4,4,1.0,4,5.0,5,4
+Teknik Informatika,2022,4,5,5.0,4,4,5,5,1.0,1,4.0,5,5
+Biologi,2023,4,4,4.0,3,4,3,3,4.0,4,4.0,3,4
+Matematika,2023,3,4,3.0,4,4,4,4,4.0,4,4.0,3,4
+Statistika,2023,4,3,4.0,4,4,3,3,4.0,4,4.0,3,4
+Fisika,2023,4,3,3.0,4,4,4,3,4.0,4,4.0,3,4
+Teknik Informatika,2023,4,3,3.0,4,4,3,3,4.0,4,4.0,3,4
+Biologi,2024,3,4,3.0,4,4,3,3,4.0,4,4.0,3,4
+Fisika,2024,3,4,4.0,4,4,3,3,4.0,3,4.0,4,5
+Matematika,2024,4,4,4.0,4,4,4,4,2.0,2,3.0,4,3
+Agribisnis,2024,4,3,3.0,4,4,3,3,4.0,4,4.0,4,5
+Agroteknologi,2024,4,4,4.0,4,4,3,3,4.0,4,4.0,4,5
+Statistika,2024,4,3,3.0,4,3,3,3,4.0,4,4.0,3,5
+Teknik Elektro,2023,3,3,4.0,4,4,4,4,4.0,4,4.0,3,5
+Teknik Elektro,2023,4,5,4.0,4,5,3,5,2.0,5,4.0,4,5
+Teknik Informatika,2022,4,3,3.0,4,4,5,5,3.0,3,4.0,3,4
+Sastra Inggris,2022,4,3,4.0,5,3,4,4,5.0,3,4.0,5,4
+Teknik Informatika,2024,2,3,4.0,3,2,4,4,5.0,3,5.0,5,4
+Teknik Informatika,2023,4,3,4.0,4,3,4,4,4.0,3,4.0,2,5
+Teknik Informatika,2023,3,5,,3,4,4,4,3.0,3,4.0,5,4
+Teknik Informatika,2024,3,5,4.0,3,3,2,4,5.0,4,3.0,4,3
+Teknik Informatika,2024,4,3,2.0,4,3,3,2,3.0,4,5.0,4,4
+Teknik Informatika,2024,4,4,4.0,5,3,3,2,3.0,4,2.0,1,5
+Teknik Informatika,2025,2,4,4.0,3,3,4,4,5.0,4,3.0,3,4
+Teknik Informatika,2024,4,4,5.0,4,4,3,4,4.0,5,5.0,4,3
+Teknik Informatika,2024,5,3,3.0,2,2,4,5,4.0,4,3.0,3,4
+Teknik Informatika,2024,3,5,4.0,5,4,4,4,,4,3.0,3,2
+Teknik Informatika,2024,5,4,5.0,4,4,3,4,4.0,5,4.0,4,3
+Teknik Informatika,2024,4,4,3.0,2,4,4,5,5.0,4,4.0,4,3
+Teknik Informatika,2024,5,4,4.0,3,4,4,5,4.0,4,4.0,3,4
+Teknik Informatika,2024,3,5,4.0,4,5,4,3,3.0,4,4.0,5,4
+Teknik Informatika,2024,3,2,4.0,3,3,2,3,3.0,4,4.0,3,4
+Teknik Informatika,2025,2,4,4.0,4,4,3,4,4.0,3,4.0,4,5
+Teknik Informatika,2024,2,3,2.0,3,3,4,4,4.0,5,5.0,4,5
+Teknik Informatika,2024,4,4,5.0,5,5,4,4,3.0,4,5.0,5,4
