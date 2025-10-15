@@ -1,29 +1,140 @@
-# Isi file: metode_modul.py
-
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
-from sklearn.preprocessing import StandardScaler
-from sklearn.cluster import KMeans
-from sklearn.decomposition import PCA
-from sklearn.impute import SimpleImputer
+
+def manual_imputer(df, strategy='median'):
+    """
+    Fungsi untuk menangani nilai yang hilang (missing values) secara manual.
+    Pengganti SimpleImputer.
+    """
+    df_imputed = df.copy()
+    for col in df_imputed.columns:
+        if df_imputed[col].isnull().sum() > 0:
+            if strategy == 'median':
+                fill_value = df_imputed[col].median()
+            elif strategy == 'mean':
+                fill_value = df_imputed[col].mean()
+            else:
+                fill_value = df_imputed[col].median()
+            df_imputed[col].fillna(fill_value, inplace=True)
+    return df_imputed
+
+def manual_scaler(data):
+    """
+    Fungsi untuk melakukan standardisasi data secara manual (pengganti StandardScaler).
+    """
+    mean = np.mean(data, axis=0)
+    std = np.std(data, axis=0)
+    std[std == 0] = 1
+    return (data - mean) / std
+
+class ManualKMeans:
+    """
+    Kelas untuk implementasi algoritma K-Means secara manual (pengganti sklearn.cluster.KMeans).
+    """
+    def __init__(self, n_clusters=3, max_iter=300, random_state=None):
+        self.n_clusters = n_clusters
+        self.max_iter = max_iter
+        self.random_state = random_state
+        self.cluster_centers_ = None
+        self.inertia_ = None
+
+    def _euclidean_distance(self, p1, p2):
+        return np.sqrt(np.sum((p1 - p2)**2))
+
+    def fit(self, X):
+        if self.random_state is not None:
+            np.random.seed(self.random_state)
+        
+        random_indices = np.random.choice(X.shape[0], self.n_clusters, replace=False)
+        self.cluster_centers_ = X[random_indices]
+
+        for _ in range(self.max_iter):
+            clusters = [[] for _ in range(self.n_clusters)]
+            for point_idx, point in enumerate(X):
+                distances = [self._euclidean_distance(point, centroid) for centroid in self.cluster_centers_]
+                closest_centroid_idx = np.argmin(distances)
+                clusters[closest_centroid_idx].append(point)
+
+            old_centroids = self.cluster_centers_.copy()
+
+            for cluster_idx, cluster_points in enumerate(clusters):
+                if cluster_points:
+                    self.cluster_centers_[cluster_idx] = np.mean(cluster_points, axis=0)
+
+            if np.all(self.cluster_centers_ == old_centroids):
+                break
+        
+        self._calculate_inertia(X)
+        return self
+
+    def predict(self, X):
+        labels = []
+        for point in X:
+            distances = [self._euclidean_distance(point, centroid) for centroid in self.cluster_centers_]
+            labels.append(np.argmin(distances))
+        return np.array(labels)
+
+    def fit_predict(self, X):
+        self.fit(X)
+        return self.predict(X)
+
+    def _calculate_inertia(self, X):
+        total_wcss = 0
+        labels = self.predict(X)
+        for i in range(self.n_clusters):
+            cluster_points = X[labels == i]
+            if len(cluster_points) > 0:
+                centroid = self.cluster_centers_[i]
+                total_wcss += np.sum((cluster_points - centroid)**2)
+        self.inertia_ = total_wcss
+
+class ManualPCA:
+    """
+    Kelas untuk implementasi Principal Component Analysis (PCA) secara manual.
+    """
+    def __init__(self, n_components):
+        self.n_components = n_components
+        self.components_ = None
+        self.mean_ = None
+
+    def fit(self, X):
+        self.mean_ = np.mean(X, axis=0)
+        X_centered = X - self.mean_
+
+        cov_matrix = np.cov(X_centered, rowvar=False)
+
+        eigenvalues, eigenvectors = np.linalg.eig(cov_matrix)
+
+        eigenvectors = eigenvectors.T
+        idxs = np.argsort(eigenvalues)[::-1]
+        eigenvalues = eigenvalues[idxs]
+        eigenvectors = eigenvectors[idxs]
+
+        self.components_ = eigenvectors[0:self.n_components]
+        return self
+
+    def transform(self, X):
+        X_centered = X - self.mean_
+        
+        return np.dot(X_centered, self.components_.T)
+
+    def fit_transform(self, X):
+        self.fit(X)
+        return self.transform(X)
 
 def generate_interpretations(cluster_means, overall_means):
     """
     Fungsi untuk menghasilkan teks interpretasi untuk setiap klaster.
+    (Fungsi ini tidak perlu diubah)
     """
     interpretations = {}
     for cluster_id, means in cluster_means.iterrows():
-        # Hitung deviasi dari rata-rata keseluruhan
         deviation = means - overall_means
-        
-        # Temukan 3 karakteristik paling menonjol (paling positif)
         top_chars = deviation.nlargest(3)
-        # Temukan 3 karakteristik paling tidak menonjol (paling negatif)
         bottom_chars = deviation.nsmallest(3)
 
-        # Buat deskripsi berdasarkan karakteristik
         description = "Klaster ini memiliki karakteristik yang menonjol sebagai berikut:\n\n"
         description += "**📈 Cenderung Sangat Tinggi pada:**\n"
         for feature, value in top_chars.items():
@@ -33,7 +144,6 @@ def generate_interpretations(cluster_means, overall_means):
         for feature, value in bottom_chars.items():
             description += f"- **{feature.replace('_', ' ').title()}** (rata-rata: {means[feature]:.2f})\n"
             
-        # Beri nama/persona klaster berdasarkan nilai rata-rata keseluruhan
         avg_score = means.mean()
         if avg_score == cluster_means.mean(axis=1).max():
             persona = "Persona: Tingkat Stres/Beban Paling Tinggi"
@@ -58,10 +168,8 @@ def jalankan_analisis(data_file):
     plt.style.use('default')
     sns.set_palette("husl")
 
-    # 1. MUAT DATA
     df = pd.read_csv(data_file)
 
-    # 2. PERSIAPAN DATA
     kolom_numerik = df.select_dtypes(include=[np.number]).columns.tolist()
     if 'Angkatan' in kolom_numerik:
         kolom_numerik.remove('Angkatan')
@@ -69,22 +177,20 @@ def jalankan_analisis(data_file):
     df_numerik = df[kolom_numerik].copy()
 
     if df_numerik.isnull().sum().sum() > 0:
-        imputer = SimpleImputer(strategy='median')
-        df_numerik_imputed = pd.DataFrame(imputer.fit_transform(df_numerik), columns=df_numerik.columns)
+        df_numerik_imputed = manual_imputer(df_numerik, strategy='median')
     else:
         df_numerik_imputed = df_numerik.copy()
 
-    scaler = StandardScaler()
-    data_scaled = scaler.fit_transform(df_numerik_imputed)
+
+    data_scaled = manual_scaler(df_numerik_imputed.values)
     
-    # Hitung rata-rata keseluruhan SEBELUM clustering untuk perbandingan
     overall_means = df_numerik_imputed.mean()
 
-    # 3. METODE ELBOW
     wcss = []
     K_range = range(1, 11)
     for k in K_range:
-        kmeans = KMeans(n_clusters=k, init='k-means++', random_state=42, n_init=10).fit(data_scaled)
+        kmeans = ManualKMeans(n_clusters=k, random_state=42)
+        kmeans.fit(data_scaled)
         wcss.append(kmeans.inertia_)
 
     fig_elbow, ax_elbow = plt.subplots(figsize=(10, 6))
@@ -95,16 +201,12 @@ def jalankan_analisis(data_file):
     ax_elbow.set_xticks(K_range)
     ax_elbow.grid(True, alpha=0.3)
     
-    # 4. K-MEANS CLUSTERING
     K_optimal = 3
-    kmeans_final = KMeans(n_clusters=K_optimal, init='k-means++', random_state=42, n_init=10)
+    kmeans_final = ManualKMeans(n_clusters=K_optimal, random_state=42)
     cluster_labels = kmeans_final.fit_predict(data_scaled)
     df['Cluster'] = cluster_labels
 
-    # 5. ANALISIS & INTERPRETASI HASIL KLASTER
     cluster_means = df.groupby('Cluster')[kolom_numerik].mean()
-    
-    # >>> INI BAGIAN BARU: PANGGIL FUNGSI INTERPRETASI <<<
     interpretasi_klaster = generate_interpretations(cluster_means, overall_means)
 
     fig_heatmap, ax_heatmap = plt.subplots(figsize=(12, 7))
@@ -113,12 +215,12 @@ def jalankan_analisis(data_file):
     ax_heatmap.set_xlabel('Cluster', fontsize=12)
     ax_heatmap.set_ylabel('Pertanyaan Survei', fontsize=12)
 
-    # 6. VISUALISASI PCA
-    pca = PCA(n_components=2, random_state=42)
+    pca = ManualPCA(n_components=2)
     pca_components = pca.fit_transform(data_scaled)
     
     fig_pca, ax_pca = plt.subplots(figsize=(10, 8))
     scatter = ax_pca.scatter(pca_components[:, 0], pca_components[:, 1], c=cluster_labels, cmap='viridis', s=50, alpha=0.7)
+    
     pca_centroids = pca.transform(kmeans_final.cluster_centers_)
     ax_pca.scatter(pca_centroids[:, 0], pca_centroids[:, 1], marker='X', s=300, c='red', edgecolors='black', label='Centroid')
     ax_pca.set_title('Visualisasi Klaster Mahasiswa (PCA)', fontsize=14, fontweight='bold')
@@ -138,5 +240,5 @@ def jalankan_analisis(data_file):
         "figur_heatmap": fig_heatmap,
         "figur_pca": fig_pca,
         "dataframe_hasil": df,
-        "interpretasi_klaster": interpretasi_klaster # <-- Mengembalikan hasil interpretasi
+        "interpretasi_klaster": interpretasi_klaster
     }

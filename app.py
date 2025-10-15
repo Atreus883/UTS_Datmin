@@ -28,9 +28,6 @@ with st.sidebar:
     st.write("Nazhifan Zahrawaani Sudrajat")
     st.write("Muhamad Faiz Muzaky")
     st.write("Miftah Rijallul Aziz")
-    # Anda bisa menambahkan nama atau NIM di sini
-    # st.write("Nama: [Nama Anda]")
-    # st.write("NIM: [NIM Anda]")
 
 
 # =======================================================
